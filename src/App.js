@@ -76,6 +76,8 @@ class App extends Component{
 
       games.push(this.game);
 
+      console.log(JSON.stringify(games));
+
         if(id === 10){
              axios.post('https://desafiogames-backend.herokuapp.com/gameresult', games)
             
@@ -126,7 +128,7 @@ renderTableData() {
                 <TBodyStyle>
                   <ThStyle>Posição</ThStyle>
                   <ThStyle>Player</ThStyle>
-                  <ThStyle>Balaço</ThStyle>
+                  <ThStyle>Balanço</ThStyle>
                   <ThStyle>Última atualização</ThStyle>
                   {this.renderTableData()}
                 </TBodyStyle>
