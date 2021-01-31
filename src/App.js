@@ -20,7 +20,7 @@ class App extends Component{
   componentDidMount(){
 
     this.updateInterval = setInterval(() => {
-      axios.get(`http://localhost:3001/leaderboard/rank`)
+      axios.get(`https://desafiogames-backend.herokuapp.com/leaderboard/rank`)
           .then(res => {
                 this.setState({
                 data: res.data,
@@ -77,7 +77,7 @@ class App extends Component{
       games.push(this.game);
 
         if(id === 10){
-             axios.post(' http://localhost:3001/gameresult', games)
+             axios.post('https://desafiogames-backend.herokuapp.com/gameresult', games)
             
                   .then(res =>{
                     games = [];
@@ -95,7 +95,7 @@ class App extends Component{
 
 handleDelete = () => {
 
-  axios.delete(`http://localhost:3001/admin/delete`)
+  axios.delete(`https://desafiogames-backend.herokuapp.com/admin/delete`)
   .then(res => {
         alert("Dados excluídos com sucesso!");
    })
